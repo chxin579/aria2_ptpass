@@ -158,7 +158,7 @@ std::string DefaultBtAnnounce::getAnnounceUrl()
   int64_t left =
       pieceStorage_->getTotalLength() - pieceStorage_->getCompletedLength();
   // Use last 8 bytes of peer ID as a key
-  const size_t keyLen = 8;
+  const size_t keyLen = 7;
   std::string uri = announceList_.getAnnounce();
   uri += uriHasQuery(uri) ? "&" : "?";
   uri +=
@@ -168,7 +168,7 @@ std::string DefaultBtAnnounce::getAnnounceUrl()
           "downloaded=%" PRId64 "&"
           "left=%" PRId64 "&"
           "compact=1&"
-          "key=%s&"
+          "key=E%s&"
           "numwant=%d&"
           "no_peer_id=1",
           util::percentEncode(bittorrent::getInfoHash(downloadContext_),
