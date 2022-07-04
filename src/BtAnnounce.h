@@ -139,7 +139,7 @@ public:
 
   static const std::string PEERS6;
 
-  constexpr static auto DEFAULT_ANNOUNCE_INTERVAL = 2_min;
+  constexpr static auto DEFAULT_ANNOUNCE_INTERVAL = 5_min;
 };
 
 } // namespace aria2
