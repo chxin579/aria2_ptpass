@@ -68,7 +68,7 @@ HttpRequest::HttpRequest()
       acceptMetalink_(false),
       noCache_(true),
       acceptGzip_(false),
-      noWantDigest_(false)
+      noWantDigest_(true)
 {
 }
 
@@ -262,7 +262,7 @@ std::string HttpRequest::createRequest()
     }
     if (!wantDigest.empty()) {
       wantDigest.erase(wantDigest.size() - 2);
-      builtinHds.emplace_back("Want-Digest:", wantDigest);
+      //builtinHds.emplace_back("Want-Digest:", wantDigest);
     }
   }
   for (const auto& builtinHd : builtinHds) {
